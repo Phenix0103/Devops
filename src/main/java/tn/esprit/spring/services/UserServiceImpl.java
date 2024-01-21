@@ -16,50 +16,51 @@ public class UserServiceImpl implements IUserService {
 	UserRepository userRepository;
 
 
-
 	private static final Logger l = LogManager.getLogger(UserServiceImpl.class);
 
 	@Override
-	public List<User> retrieveAllUsers() { 
-
-		return null;
+	public List<User> retrieveAllUsers() {
+		List<User> users = userRepository.findAll();
+		// Log the size of the list
+		System.out.println("Number of users retrieved: " + users.size());
+		return users;
 	}
 
 
 	@Override
 	public User addUser(User u) {
 
-		User utilisateur = null; 
+		User utilisateur = null;
 
 		try {
 			// TODO Log à ajouter en début de la méthode 
-			utilisateur = userRepository.save(u); 
+			utilisateur = userRepository.save(u);
 			// TODO Log à ajouter à la fin de la méthode 
 
 		} catch (Exception e) {
 			// TODO log ici : l....("error in addUser() : " + e);
 		}
 
-		return utilisateur; 
+		return utilisateur;
 	}
 
-	@Override 
+	@Override
 	public User updateUser(User u) {
 
-		User userUpdated = null; 
-		User u_saved = null; 
+		User userUpdated = null;
+		User u_saved = null;
 
-		
+
 		try {
 			// TODO Log à ajouter en début de la méthode 
-			userUpdated = userRepository.save(u); 
+			userUpdated = userRepository.save(u);
 			// TODO Log à ajouter à la fin de la méthode 
 
 		} catch (Exception e) {
 			// TODO log ici : l....("error in updateUser() : " + e);
 		}
 
-		return userUpdated; 
+		return userUpdated;
 	}
 
 	@Override
@@ -67,7 +68,7 @@ public class UserServiceImpl implements IUserService {
 
 		try {
 			// TODO Log à ajouter en début de la méthode 
-			userRepository.deleteById(Long.parseLong(id)); 
+			userRepository.deleteById(Long.parseLong(id));
 			// TODO Log à ajouter à la fin de la méthode 
 
 		} catch (Exception e) {
@@ -80,7 +81,7 @@ public class UserServiceImpl implements IUserService {
 	public User retrieveUser(String id) {
 		User u = null;
 		try {
-			u =  userRepository.findById(Long.parseLong(id)).get();
+			u = userRepository.findById(Long.parseLong(id)).get();
 
 		} catch (Exception e) {
 		}
@@ -88,7 +89,4 @@ public class UserServiceImpl implements IUserService {
 		return u;
 	}
 
-	
-	
-	
 }
