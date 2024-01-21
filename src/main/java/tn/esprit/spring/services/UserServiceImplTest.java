@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
-	class UserServiceImplTest{ @AutowiredIUserServiceus; @Test@Order(1)
-							  public voidtestRetrieveAllUsers() 
-							  {List<User> listUsers= us.retrieveAllUsers(); Assertions.assertEquals(0, listUsers.size());} ....
-							 }
+class UserServiceImplTest{
+	@AutowiredIUserService us; 
+	@Test
+	@Order(1)
+	public voidtestRetrieveAllUsers()  
+	{List<User> listUsers= us.retrieveAllUsers(); 
+	 Assertions.assertEquals(0, listUsers.size());
+	} 
+}
