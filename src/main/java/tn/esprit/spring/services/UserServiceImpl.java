@@ -9,18 +9,9 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.UserRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-@SpringBootTest@TestMethodOrder(OrderAnnotation.class)
+
 @Service
-@ExtendWith(MockitoExtension.class)
 public class UserServiceImpl implements IUserService {
-        @Mock
 	@Autowired
 	UserRepository userRepository;
 
